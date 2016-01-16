@@ -1,4 +1,4 @@
-<span class='x'><a href='/#'> Diario(Likes) </a> <a href='/#fsi=1'>Diario(FSI)</a> <a href='/#totalfsi=1'>Total(Likes / FSI)</a> </span><div class='x' style='float:right'><a href='javascript:void(0)' id='b' type='button' onclick="terminate();document.getElementById('b').disabled = true;" />Diff</a></div><table id="table_demo_world" style="margin:0px auto"><tr><th>Relatorio Diário <small>16/01/2016 </small> </th><th>Likes</th><th>FSI</th></tr></tr>
+<span class='x'><a href='./'> Diario(Likes) </a> <a href='./'>Diario(FSI)</a> <a href='./'>Total(Likes / FSI)</a> </span><div class='x' style='float:right'><a href='javascript:void(0)' id='b' type='button' onclick="terminate();document.getElementById('b').disabled = true;" />Diff</a></div><table id="table_demo_world" style="margin:0px auto"><tr><th>Relatorio Diário <small>16/01/2016 </small> </th><th>Likes</th><th>FSI</th></tr></tr>
 <tr><td> Indiretas Perfeitas '-' (<a target='_blank' href='http://www.facebook.com/Indiretas+Perfeitas+%27-%27-1014227931961819/likes'>1014227931961819</a>)</td><td>11472</td><td>112</td></tr>
 <tr><td> Arte de Rabiscar (<a target='_blank' href='http://www.facebook.com/Arte+de+Rabiscar-1020255161340015/likes'>1020255161340015</a>)</td><td>3929</td><td>96</td></tr>
 <tr><td> Frases do Gato Preto (<a target='_blank' href='http://www.facebook.com/Frases+do+Gato+Preto-1024274767607068/likes'>1024274767607068</a>)</td><td>4253</td><td>135</td></tr>
@@ -232,6 +232,11 @@ var total = function() {
 		}
 	}
 	console.log(valor);
+}
+var path = window.location.pathname;
+var page = path.split("/").pop();
+if( page == "total.html" ){
+document.getElementByid("b").style.display = "none";
 }
 // -->
 </script>
