@@ -186,10 +186,7 @@
 <tr><td> Você é tudo pra mim (<a target='_blank' href='http://www.facebook.com/Voc%C3%AA+%C3%A9+tudo+pra+mim-955042484563642/likes'>955042484563642</a>)</td><td>17063</td><td>45</td></tr>
 <tr><td> Baú de Sentimentos (<a target='_blank' href='http://www.facebook.com/Ba%C3%BA+de+Sentimentos-977431375632685/likes'>977431375632685</a>)</td><td>1464</td><td>26</td></tr>
 </table><style>
-.x{display:table;margin:0px auto;}
-.x a{color: #333;background-color: #fff;border-color: #ccc;padding: 6px 12px;font-size: 14px;text-align: center;vertical-align: middle;cursor: pointer;border: 1px solid gray;border-radius: 4px;float:left;text-decoration:none;}
-td{border-top: 1px solid #eee;padding: 2px 5px;}th{background-color:#333;padding: 5px 5px;}
-th a{color:#fff;text-decoration:none;}tr:nth-child(odd) {background-color:#FFF;}tr:nth-child(even) {background-color:#ddd;}
+.x{display:table;margin:0px auto;}.x a{color: #333;background-color: #fff;border-color: #ccc;padding: 6px 12px;font-size: 14px;text-align: center;vertical-align: middle;cursor: pointer;border: 1px solid gray;border-radius: 4px;float:left;text-decoration:none;}td{border-top: 1px solid #eee;padding: 2px 5px;}th{background-color:#333;padding: 5px 5px;}th a{color:#fff;text-decoration:none;}tr:nth-child(odd) {background-color:#FFF;}tr:nth-child(even) {background-color:#ddd;}
 </style>
 <script type="text/javascript" src="gs_sortable.js"></script>
 <script type="text/javascript">
@@ -212,9 +209,7 @@ var terminate = function() {
 	for(var i=1;i<tr.length;i++) {
 		var trl=tr[i].getElementsByTagName("td");
 		valuer = (parseInt(trl[1].innerText) - parseInt(trl[trl.length-1].innerText))
-		for(var j=trl.length-1;j>1;j--) {
-			tr[i].getElementsByTagName("td")[j].remove();		
-		}
+		for(var j=trl.length-1;j>1;j--) { tr[i].getElementsByTagName("td")[j].remove(); }
 		tr[i].getElementsByTagName("td")[1].innerText=valuer;
 	}
 	TSort_Data = new Array ('table_demo_world', 's', 'i');
@@ -235,8 +230,19 @@ var total = function() {
 }
 var path = window.location.pathname;
 var page = path.split("/").pop();
-if( page == "total.html" ){
-document.getElementById("b").style.display = "none";
+if( page == "total.html" ){ document.getElementById("b").style.display = "none"; }
+var t = document.createElement("title");
+switch(page) {
+    case "total":
+        t.innerText="Lista de Páginas Likes/FSI - Total (Vini)";
+        break;
+    case "fsi.html":
+        t.innerText="Lista de Páginas Likes/FSI - FSI (Vini)";
+        break;
+    default:
+        t.innerText="Lista de Páginas Likes/FSI";
 }
+document.body.appendChild(t);
+
 // -->
 </script>
