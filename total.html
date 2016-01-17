@@ -1,4 +1,4 @@
-<span class='x'><a href='./'> Diario(Likes) </a> <a href='./fsi.html'>Diario(FSI)</a> <a href='./total.html'>Total(Likes / FSI)</a> </span><div class='x' style='float:right'><a href='javascript:void(0)' id='b' type='button' onclick="terminate();document.getElementById('b').disabled = true;" />Diff</a></div><table id="table_demo_world" style="margin:0px auto"><tr><th>Relatorio Diário <small>17/01/2016 </small> </th><th>Likes</th><th>FSI</th></tr></tr>
+<span class='x'><a href='./'> Diario(Likes) </a> <a href='./fsi.html'>Diario(FSI)</a> <a href='./total.html'>Total(Likes / FSI)</a>  <a href='./auge.html'>Auge(Likes / FSI)</a></span> <div class='x' style='float:right'><a href='javascript:void(0)' id='b' type='button' onclick="terminate();document.getElementById('b').disabled = true;" />Diff</a></div><table id="table_demo_world" style="margin:0px auto"><tr><th>Relatorio Diário <small>17/01/2016 </small> </th><th>Likes</th><th>FSI</th></tr></tr>
 <tr><td> Indiretas Perfeitas '-' (<a target='_blank' href='http://www.facebook.com/Indiretas+Perfeitas+%27-%27-1014227931961819/likes'>1014227931961819</a>)</td><td>11472</td><td>112</td></tr>
 <tr><td> Arte de Rabiscar (<a target='_blank' href='http://www.facebook.com/Arte+de+Rabiscar-1020255161340015/likes'>1020255161340015</a>)</td><td>3928</td><td>93</td></tr>
 <tr><td> Frases do Gato Preto (<a target='_blank' href='http://www.facebook.com/Frases+do+Gato+Preto-1024274767607068/likes'>1024274767607068</a>)</td><td>4253</td><td>137</td></tr>
@@ -232,11 +232,15 @@ var total = function() {
 }
 var path = window.location.pathname;
 var page = path.split("/").pop();
-if( page == "total.html" ){ document.getElementById("b").style.display = "none"; }
+if( page == "total.html" || page == "auge.html" ){ document.getElementById("b").style.display = "none"; }
 var t = document.createElement("title"), 
 header = document.createElement("h2"),
 nottt="";
 switch(page) {
+    case "auge.html":
+        t.innerText="Auge das Páginas Likes/FSI - Total (Vini)";
+	header.innerHTML = 'Auge das Páginas em Likes & FSI ';
+        break;
     case "total.html":
         t.innerText="Lista de Páginas Likes/FSI - Total (Vini)";
 	header.innerHTML = 'Total de Páginas x Likes + FSI ';

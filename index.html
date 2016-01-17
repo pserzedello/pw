@@ -1,4 +1,4 @@
-<span class='x'><a href='./'> Diario(Likes) </a> <a href='./fsi.html'>Diario(FSI)</a> <a href='./total.html'>Total(Likes / FSI)</a> </span><div class='x' style='float:right'><a href='javascript:void(0)' id='b' type='button' onclick="terminate();document.getElementById('b').disabled = true;" />Diff</a></div><table id="table_demo_world" style="margin:0px auto"><tr><th>Relatorio Diário <small>17/01/2016 </small> </th><th>09 Hs </th>
+<span class='x'><a href='./'> Diario(Likes) </a> <a href='./fsi.html'>Diario(FSI)</a> <a href='./total.html'>Total(Likes / FSI)</a>  <a href='./auge.html'>Auge(Likes / FSI)</a></span> <div class='x' style='float:right'><a href='javascript:void(0)' id='b' type='button' onclick="terminate();document.getElementById('b').disabled = true;" />Diff</a></div><table id="table_demo_world" style="margin:0px auto"><tr><th>Relatorio Diário <small>17/01/2016 </small> </th><th>09 Hs </th>
 <th><img title='00hs até 09hs' style='width:50px' src=statistic.png /></th>
 <th>00 Hs </th>
 <th><img title='23hs até 00hs' style='width:50px' src=statistic.png /></th>
@@ -266,11 +266,15 @@ var total = function() {
 }
 var path = window.location.pathname;
 var page = path.split("/").pop();
-if( page == "total.html" ){ document.getElementById("b").style.display = "none"; }
+if( page == "total.html" || page == "auge.html" ){ document.getElementById("b").style.display = "none"; }
 var t = document.createElement("title"), 
 header = document.createElement("h2"),
 nottt="";
 switch(page) {
+    case "auge.html":
+        t.innerText="Auge das Páginas Likes/FSI - Total (Vini)";
+	header.innerHTML = 'Auge das Páginas em Likes & FSI ';
+        break;
     case "total.html":
         t.innerText="Lista de Páginas Likes/FSI - Total (Vini)";
 	header.innerHTML = 'Total de Páginas x Likes + FSI ';
